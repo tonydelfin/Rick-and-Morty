@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; scroll-behavior: smooth;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+a{
+    display: inline-block;
+    position: relative;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0px;
+    left: 0;
+    background-color: #FF9950;
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+}
+a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom center;
+    
+}
+.no-hidden{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    visibility: visible;
+}
+p{
+    color: whitesmoke;
+}

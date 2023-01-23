@@ -1,0 +1,17 @@
+<div class="row" infinite-scroll (scrolled)="ScrollDown()">
+    <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let personaje of personajes">
+            
+        <app-personaje [personaje]="personaje"></app-personaje>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound " *ngIf="personajes.length >= 0">
+        <mat-card>
+            <mat-card-content>No se encontraror resulatdos</mat-card-content>
+          </mat-card>
+    </div>
+</div>
+
+<button  [ngClass]="'no-hidden'" *ngIf="showGoUpbtn" (click)="ScrollUp()" class="btn btn-dark mb-5">
+    Ir Arriba 
+</button>

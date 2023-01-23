@@ -1,0 +1,73 @@
+<div class="row g-0" *ngIf="personaje$ | async as personaje">
+    <div class="col-xs-12 col-sm-6 col-md-5 ">
+            <div class="">
+            
+
+                <mat-card class="mb-4">
+                    
+                   
+
+                        <img mat-card-image 
+                        [src]="personaje.image" 
+                        [alt]="personaje.name"
+                        class="card-img-top mb-2 mt-2">
+                  
+                   
+
+                  </mat-card>
+
+                  <mat-card class="mb-4 justify-content-left">
+                    <mat-card-header>
+                       
+                          
+                            <mat-card-title>{{personaje.name | titlecase }}</mat-card-title>
+                            <mat-card-subtitle>{{personaje.status}}</mat-card-subtitle>
+
+                        
+                        
+                    </mat-card-header>
+                   
+
+                       
+                  
+                    <mat-card-content >
+                      <p>
+                        Género: {{ personaje.gender}}
+                        <br>
+                        Fecha de Creacion: {{personaje.created | date}}
+                        <br>
+                        Origen: {{personaje.location.name}}
+                        <br>
+                        Especie: {{personaje.species}}
+                        <br>
+                        Apariciones: {{personaje.episode.length}}
+                        <br>
+                        <small *ngIf="personaje.type.length >0">
+                          Tipo: {{personaje.type }}
+
+                        </small>
+                        
+                        <mat-divider class="mt-3">
+                        </mat-divider>
+                        
+                      </p>
+                    </mat-card-content>
+                   
+                    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                  </mat-card>
+
+
+            </div>
+
+    </div>
+
+    
+</div>
+
+
+
+<div class="col-6 col-md-4">
+    <button class="btn btn-dark mb-5 " (click)="btnVolver()">
+        Volver 
+    </button>
+</div>
